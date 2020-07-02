@@ -1,0 +1,269 @@
+.galaxy {
+    background: url(https://htmlacademy.ru/assets/courses/80/space_pattern.svg);
+    background-color: rgb(6, 25, 46);
+    color: lightsteelblue;
+    position: relative;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.galaxy__control {
+    margin: 20px 20px 0 auto;
+    align-self: start;
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    margin-left: auto;
+    padding: 5px 15px;
+    border-radius: 6px;
+    border: 1px solid lightsteelblue;
+    background-color: rgb(14, 32, 53);
+    color: lightsteelblue;
+    font-weight: 600;
+}
+
+.button:hover {
+    box-shadow: 0 0 10px 3px lightsteelblue;
+}
+
+.button:active {
+    border: 1px solid rgb(14, 32, 53);
+    background-color: lightsteelblue;
+    color: rgb(14, 32, 53);
+}
+
+.galaxy__statistics {
+    position: absolute;
+    right: 0;
+    bottom: -460px;
+    /* transform: translateY(120%); */
+    transition: 1s ease-in-out;
+}
+
+.statistics {
+    padding: 20px;
+}
+
+.statistics--shown {
+    transform: translateY(-460px);
+    transition: 1s ease-in-out;
+}
+
+.statistics__table {
+    padding: 5px;
+    border: 1px solid lightsteelblue;
+    border-radius: 8px;
+    border-spacing: 10px;
+}
+
+.statistics__row {
+    margin-bottom: 20px;
+}
+
+.statistics__row:hover .statistics__cell {
+    box-shadow: 0 0 12px 1px lightsteelblue;
+}
+
+.statistics__cell {
+    padding: 5px 10px;
+    border: 1px solid lightsteelblue;
+    border-radius: 5px;
+    text-align: right;
+}
+
+.statistics__cell--header {
+    text-align: center;
+    max-width: 70px;
+}
+
+.galaxy__element {
+    position: absolute;
+    margin: auto;
+    width: 100px;
+    height: 700px;
+}
+
+.sun {
+    background-image: url(img/sun.png);
+    z-index: 1;
+}
+
+.mercury {
+    background-image: url(img/mercury.png);
+    z-index: 2;
+}
+
+.venus {
+    background-image: url(img/venus.png);
+    z-index: 3;
+}
+
+.earth {
+    background-image: url(img/earth.png);
+    z-index: 4;
+}
+
+.mars {
+    background-image: url(img/mars.png);
+    z-index: 5;
+}
+
+.jupiter {
+    background-image: url(img/jupiter.png);
+    transition: 0.8s ease-in-out;
+    z-index: 6;
+}
+
+.saturn {
+    background-image: url(img/saturn.png);
+    transition: 3s ease-in-out;
+    z-index: 7;
+}
+
+.uranus {
+    background-image: url(img/uranus.png);
+    transition: 4s ease-in-out;
+    z-index: 8;
+}
+
+.neptune {
+    background-image: url(img/neptun.png);
+    transition: 7s ease-in-out;
+    z-index: 9;
+}
+
+.pluto {
+    background-image: url(img/pluto.png);
+    transition: 7s ease-in-out;
+    z-index: 10;
+}
+
+.modal {
+    display: none;
+    position: absolute;
+    margin: auto;
+    padding: 15px 30px;
+    width: 400px;
+    border: 1px solid lightsteelblue;
+    border-radius: 8px;
+    background-color: rgba(14, 32, 53, 0.7);
+    color: lightsteelblue;
+    text-align: center;
+    font-size: 20px;
+    z-index: 11;
+}
+
+.modal__text {
+    margin: 0;
+    line-height: 40px;
+}
+
+.close {
+    position: absolute;
+    margin-bottom: 0;
+    width: 20px;
+    height: 25px;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.close--modal {
+    top: -26px;
+    right: 10px;
+    z-index: 15;
+}
+
+.show--table {
+    position: absolute;
+    top: -15px;
+    right: 40px;
+    z-index: 12;
+}
+
+.show {
+    display: block;
+}
+
+.close__alien {
+    transform: scale(3);
+}
+
+.close__alien--large {
+    transform: scale(5);
+}
+
+.close:hover {
+    transform: scale(1.1) translateY(-1px);
+    transition: 0.2s ease;
+}
+
+.close:hover ellipse {
+    fill: gold;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.close:active ellipse {
+    fill: crimson;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.close:focus,
+.button:focus {
+    outline: none;
+}
+
+.comet {
+    position: absolute;
+    bottom: 1vh;
+    left: 1vw;
+    animation-name: launch;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    z-index: 1;
+}
+
+.comet__img {
+    transform: rotate(180deg) scale(0.3);
+}
+
+@keyframes launch {
+    0% {
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    94% {
+        opacity: 0.7;
+    }
+
+    95% {
+        opacity: 1;
+        transform: translate(50vw, -50vh);
+        transform: scale(1.2);
+    }
+
+    97% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(95vw, -95vh);
+        opacity: 0;
+    }
+}
